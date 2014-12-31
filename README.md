@@ -4,9 +4,25 @@ An [awesome](http://awesome.naquadah.org/) theme tailored specifically to be a d
 
 Before present a little more about this, let's see how it looks like.
 
-```
-Screnshot Placeholder
-```
+**KDEsome Main Screen**
+
+![KDEsome Main Screen](https://raw.githubusercontent.com/denydias/kdesome/master/screenshots/1-kdesome.png)
+
+**KDEsome Main Menu**
+
+![KDEsome Main Menu](https://raw.githubusercontent.com/denydias/kdesome/master/screenshots/2-kdesome-menu.png)
+
+**KDEsome Widgets**
+
+![KDEsome Widgets](https://raw.githubusercontent.com/denydias/kdesome/master/screenshots/3-kdesome-widgets.png)
+
+**KDEsome Dual Head**
+
+![KDEsome Dual Head](https://raw.githubusercontent.com/denydias/kdesome/master/screenshots/4-kdesome-dualhead.png)
+
+**KDEsome Terminal Tile**
+
+![KDEsome Terminal Tile](https://raw.githubusercontent.com/denydias/kdesome/master/screenshots/5-kdesome-termtile.png)
 
 ## Dependencies
 
