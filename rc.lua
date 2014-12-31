@@ -513,8 +513,8 @@ awful.rules.rules = {
 
     -- {{ Application rules
     -- Firefox: all clients in screen 1, tag 1, get focus when opened
---     { rule = { class = "Firefox" },
---       properties = { tag = tags[1][1] } },
+    { rule = { class = "Firefox" },
+      properties = { tag = tags[1][1] } },
 
     -- { Kontact
     -- All clients in screen 1, tag 2, get focus when opened
