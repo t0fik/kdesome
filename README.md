@@ -36,7 +36,7 @@ To use KDEsome, first make sure that you have meet all dependencies. They are:
  # sbopkg -i "lua lgi libxdg-basedir awesome"
  ```
 
-2. **[Unclutter](http://unclutter.sourceforge.net/):** a program which runs permanently in the background of an X11 session to hide the mouse cursor when it's not in use (and bring it back when you need it too). Same as above, most distributions have packages to it.
+2. **[Unclutter](http://unclutter.sourceforge.net/):** a program which runs permanently in the background of an X11 session to hide the mouse cursor when it's not in use (and bring it back when you need it too). Same as above, most distributions have packages for it.
 
  Slackware users should run this to get Unclutter in place:
 
@@ -61,10 +61,11 @@ To use KDEsome, first make sure that you have meet all dependencies. They are:
  # sbopkg -i "libconfig compton"
  ```
 
+Although KDEsome is made to work in cooperation with KDE, it's not required that you have KDE installed to use it. Just keep in mind that KDEsome has some configurations in [rc.lua](https://github.com/denydias/kdesome/blob/master/rc.lua#L75) that demands KDE applications installed, such as Dolphin, Kate, Kontact and Kopete. Whoever it's easy enough so a user change that for anything of the choice.
+
 Now you are ready to go for KDEsome.
 
 ## Installation
-
 
 KDEsome installation is kinda simple. It's just a matter to clone this repository and tell KDE that you don't want Plasma Desktop as your Window Manager anymore. So, let's do it:
 
@@ -75,13 +76,21 @@ $ echo "export KDEWM=awesome" > ~/.kde/env/set_window_manager.sh
 $ chmod +x ~/.kde/env/set_window_manager.sh
 ```
 
+Now go to **System Settings > Startup and Shutdown > Autostart > uncheck Plasma Workspace** item. Do not remove this item from the list, as KDE will assume the default behavior that is to start Plasma anyway.
+
+Next go to **System Settings > Startup and Shutdown > Service Manager > uncheck Status Notifier Manager** item. This will allow the system tray to show up in KDEsome.
+
+Also under **Service Manager**, you can also stop and disable **Plasma Networkmanagement module** and **Display Management change monitor**. The remaining services can be left alone.
+
+After restart into awesome and you can't see the NetworkManager icon on your system tray, make sure you have the package `network-manager-applet` and its related installed item is enabled in **System Settings > Startup and Shutdown > Autostart**.
+
 Restart you KDE and you should get it done.
 
 ## Features
 
 Many! Hit `Mod4+F1` to get a nice help screen for KDEsome (it's in Brazilian Portuguese, but easy to translate).
 
-The most nice feature is the seamless integration with underlying KDE. You can use many of your KDE applications and global shortcuts without conflicts with awesome. Screenshots (`Printscreen`), session control (`Ctrl+Alt+Del`), Yakuake activation and many other shortcuts comes straight from KDE without a glitch.
+The most nice feature is the seamless integration with underlying KDE. You can use many of your KDE applications and global shortcuts without conflicts with awesome. Screenshots (`Printscreen`), session control (`Ctrl+Alt+Del`), KRunner, Yakuake activation and many other shortcuts comes straight from KDE without a glitch.
 
 You can even rely on the fantastic KDE Connect to remote control your screen or media player as KDEsome was made to keep all the KDE goodies intact.
 
