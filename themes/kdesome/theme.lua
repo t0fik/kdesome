@@ -10,7 +10,7 @@ themes_dir                          = os.getenv("HOME") .. "/.config/awesome/the
 theme.wallpaper                     = themes_dir .. "/wall.png"
 theme.help_icon                     = themes_dir .. "/icons/help.png"
 
-theme.font                          = "Anonymous Pro 8"
+theme.font                          = "Terminus 8"
 theme.fg_normal                     = "#DDDDFF"
 theme.fg_focus                      = "#508ED8"
 theme.fg_urgent                     = "#CC9393"
