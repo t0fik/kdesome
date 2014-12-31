@@ -450,16 +450,10 @@ clientkeys = awful.util.table.join(
         end, "Informações da janela do aplicativo*")
 )
 
--- Compute the maximum number of digit we need, limited to 9
-keynumber = 0
-for s = 1, screen.count() do
-   keynumber = math.min(9, math.max(#tags[s], keynumber));
-end
-
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it works on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
-for i = 1, keynumber do
+for i = 1, 9 do
     globalkeys = awful.util.table.join(globalkeys,
         --HELP- <span color="#508ED8">Mod4+#:</span> Switch to tag #
         awful.key({ modkey }, "#" .. i + 9,
