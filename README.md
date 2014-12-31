@@ -92,6 +92,8 @@ Many! Hit `Mod4+F1` to get a nice help screen for KDEsome (it's in Brazilian Por
 
 The most nice feature is the seamless integration with underlying KDE. You can use many of your KDE applications and global shortcuts without conflicts with awesome. Screenshots (`Printscreen`), session control (`Ctrl+Alt+Del`), KRunner, Yakuake activation and many other shortcuts comes straight from KDE without a glitch.
 
+KDE also takes care of dual head (multiple monitors) setup for you. This feature plays nicely with awesome and compton, so your multiple monitors works just as you expect they do without hassle.
+
 You can even rely on the fantastic KDE Connect to remote control your screen or media player as KDEsome was made to keep all the KDE goodies intact.
 
 ## TODO
