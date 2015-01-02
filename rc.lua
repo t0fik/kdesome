@@ -333,6 +333,7 @@ clientbuttons = awful.util.table.join(
 -- }}}
 
 -- {{{ Key bindings
+-- {{ Global keys
 globalkeys = awful.util.table.join(
     -- Assistance
     keydoc.group("Assistência"),
@@ -386,24 +387,64 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Ctrl" }, "space", function () awful.layout.inc(layouts, 1) end, "Próximo layout*"),
     awful.key({ modkey, "Shift" }, "space", function () awful.layout.inc(layouts, -1) end, "Layout anterior"),
     awful.key({ modkey, "Shift" }, "j", function () awful.client.swap.byidx(1) end, "Troca com a próxima janela"),
-    awful.key({ modkey, "Shift" }, "k", function () awful.client.swap.byidx(-1) end, "Troca com a janela anterior"),
+    awful.key({ modkey, "Shift" }, "k", function () awful.client.swap.byidx(-1) end, "Troca com a janela anterior")
+)
 
-    -- Navigation and tag Management
+-- { Navigation and tag management
+-- Bind all key numbers to tags.
+-- Be careful: we use keycodes to make it works on any keyboard layout.
+-- This should map on the top row of your keyboard, usually 1 to 9.
+for i = 1, 9 do
+    globalkeys = awful.util.table.join(globalkeys,
+        keydoc.group("Navegação e Tags"),
+        awful.key({ modkey }, "#" .. i + 9,
+                  function ()
+                        local screen = mouse.screen
+                        local tag = awful.tag.gettags(screen)[i]
+                        if tag then
+                           awful.tag.viewonly(tag)
+                        end
+                  end,
+                  i == 5 and "Mostra apenas tag #" or nil),
+        awful.key({ modkey, "Control" }, "#" .. i + 9,
+                  function ()
+                      local screen = mouse.screen
+                      local tag = awful.tag.gettags(screen)[i]
+                      if tag then
+                         awful.tag.viewtoggle(tag)
+                      end
+                  end,
+                  i == 5 and "Mostra/esconde tag #" or nil),
+        awful.key({ modkey, "Shift" }, "#" .. i + 9,
+                  function ()
+                      local tag = awful.tag.gettags(client.focus.screen)[i]
+                      if client.focus and tag then
+                          awful.client.movetotag(tag)
+                     end
+                  end,
+                  i == 5 and "Move janela para tag #" or nil),
+        awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
+                  function ()
+                      local tag = awful.tag.gettags(client.focus.screen)[i]
+                      if client.focus and tag then
+                          awful.client.toggletag(tag)
+                      end
+                  end,
+                  i == 5 and "Adiciona janela na tag #" or nil))
+end
+
+globalkeys = awful.util.table.join(globalkeys,
     keydoc.group("Navegação e Tags"),
-    awful.key({ modkey }, "#14", awful.tag.viewonly, "Vai para tag #"),
     awful.key({ modkey }, "Left", awful.tag.viewprev, "Tag anterior"),
     awful.key({ modkey }, "Right", awful.tag.viewnext, "Próxima tag"),
     awful.key({ modkey }, "Escape", awful.tag.history.restore, "Retorna para tag anterior"),
-    -- { These are dummy keys, the actual work is done by 'Bind all key numbers to tags' bellow
-    awful.key({ modkey, "Ctrl" }, "#14", awful.tag.viewtoggle, "Mostra/esconde tag #"),
-    awful.key({ modkey, "Shift" }, "#14", awful.client.movetotag, "Move janela para tag #"),
-    awful.key({ modkey, "Ctrl", "Shift" }, "#14", awful.client.toggletag, "Adiciona janela na tag #"),
-    -- }
     awful.key({ altkey }, "Left", function () lain.util.tag_view_nonempty(-1) end, "Vai para tag anterior ocupada*"),
     awful.key({ altkey }, "Right", function () lain.util.tag_view_nonempty(1) end, "Vai para próxima tag ocupada*")
 )
+-- }
+-- }}
 
--- Client Keys
+-- {{ Client Keys
 clientkeys = awful.util.table.join(
     keydoc.group("Janelas"),
     awful.key({ modkey }, "n",
@@ -449,44 +490,7 @@ clientkeys = awful.util.table.join(
             })
         end, "Informações da janela do aplicativo*")
 )
-
--- Bind all key numbers to tags.
--- Be careful: we use keycodes to make it works on any keyboard layout.
--- This should map on the top row of your keyboard, usually 1 to 9.
-for i = 1, 9 do
-    globalkeys = awful.util.table.join(globalkeys,
-        --HELP- <span color="#508ED8">Mod4+#:</span> Switch to tag #
-        awful.key({ modkey }, "#" .. i + 9,
-                  function ()
-                        local screen = mouse.screen
-                        local tag = awful.tag.gettags(screen)[i]
-                        if tag then
-                           awful.tag.viewonly(tag)
-                        end
-                  end),
-        awful.key({ modkey, "Control" }, "#" .. i + 9,
-                  function ()
-                      local screen = mouse.screen
-                      local tag = awful.tag.gettags(screen)[i]
-                      if tag then
-                         awful.tag.viewtoggle(tag)
-                      end
-                  end),
-        awful.key({ modkey, "Shift" }, "#" .. i + 9,
-                  function ()
-                      local tag = awful.tag.gettags(client.focus.screen)[i]
-                      if client.focus and tag then
-                          awful.client.movetotag(tag)
-                     end
-                  end),
-        awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
-                  function ()
-                      local tag = awful.tag.gettags(client.focus.screen)[i]
-                      if client.focus and tag then
-                          awful.client.toggletag(tag)
-                      end
-                  end))
-end
+-- }}
 
 -- Set keys
 root.keys(globalkeys)
