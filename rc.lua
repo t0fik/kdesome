@@ -498,7 +498,7 @@ root.keys(globalkeys)
 
 -- {{{ Rules
 awful.rules.rules = {
-    -- All clients will match this rule, except the ones excluded
+    -- All clients will match this rule
     { rule = { },
       properties = { border_width = beautiful.border_width,
                      border_color = beautiful.border_normal,
@@ -510,12 +510,12 @@ awful.rules.rules = {
                      size_hints_honor = false } },
 
     -- {{ Application rules
-    -- Firefox: all clients in screen 1, tag 1, get focus when opened
+    -- Firefox: all clients in screen 1, tag 1
     { rule = { class = "Firefox" },
       properties = { tag = tags[1][1] } },
 
     -- { Kontact
-    -- All clients in screen 1, tag 2, get focus when opened
+    -- All clients in screen 1, tag 2
     { rule = { class = "Kontact" },
       properties = { tag = tags[1][2] } },
 
@@ -527,7 +527,7 @@ awful.rules.rules = {
                                   width = 1304,
                                   height = 688 } } },
 
-    -- Focus mail composer
+    -- Focus mail composer, get focus when opened
     { rule = { class = "Kontact",
                role = "kmail-composer#1" },
       properties = { switchtotag = true,
@@ -535,7 +535,7 @@ awful.rules.rules = {
     -- }
 
     -- { Kopete
-    -- All clients in screen 1, tag 3, get focus when opened
+    -- All clients in screen 1, tag 3
     { rule = { class = "Kopete" },
       properties = { tag = tags[1][3] } },
 
@@ -622,7 +622,7 @@ awful.rules.rules = {
 -- }}}
 
 -- {{{ Signals
--- Signal function to execute when a new client appears.
+-- Functions to execute when a new client appears.
 client.connect_signal("manage", function (c, startup)
     -- enable sloppy focus
     c:connect_signal("mouse::enter", function(c)
@@ -640,13 +640,15 @@ client.connect_signal("manage", function (c, startup)
     end
 end)
 
+-- Apply rules after an application startup finishes
 client.connect_signal("spawn::completed", function (c)
   awful.rules.apply(c)
 end)
 
--- No border for maximized clients, full screen flash content and special ones
+-- Manage features when a client get the focus
 client.connect_signal("focus",
     function(c)
+        -- No border for maximized clients, full screen flash content and special ones
         if c.maximized_horizontal == true and c.maximized_vertical == true then
             c.border_color = beautiful.border_normal
         elseif c.name == "plugin-container" then
@@ -660,6 +662,9 @@ client.connect_signal("focus",
             c.border_width = 0
         else
             c.border_color = beautiful.border_focus
+            -- Also raise the client when it get the focus
+            client.focus = c
+            c:raise()
         end
     end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
