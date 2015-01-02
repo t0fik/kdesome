@@ -87,10 +87,17 @@ After restart into awesome and you can't see the NetworkManager icon on your sys
 If you want to change the `nm-applet` icon to match KDEsome, run in Slackware (adapt for another distro):
 
 ```console
-# cp code/mine/kdesome/themes/kdesome/trayicons/*.png \
+# cp code/mine/kdesome/themes/kdesome/trayicons/nm-applet/*.png \
 /usr/share/icons/hicolor/16x16/apps/
 # rm -f /usr/share/icons/icon-theme.cache && \
 /usr/bin/gtk-update-icon-cache -t -f /usr/share/icons/
+```
+
+In the rare case where someone uses Synology CloudStation client, there are also systray icons for it too. To install them in Slackware:
+
+```console
+# cp code/mine/kdesome/themes/kdesome/trayicons/cloudstation/*.png \
+~/.CloudStation/app/images/
 ```
 
 Restart you KDE and you should get it done.
