@@ -113,7 +113,7 @@ Here are some TODOs. These are things I don't know how to get it done in Lua and
 - [ ] Remove Conky from the taglist so that square on tag 6 do not show up for it (there are a [thread](http://www.mail-archive.com/awesome@naquadah.org/msg07817.html) for this in awesome's mail list, but no solution yet).
 - [ ] Adjust windows geometry upon application start (it works fine after a WM restart, but not quite good at application start).
 - [ ] Localize help (maybe using `partials` method from this [repo](https://github.com/noah/awesome/tree/master)).
-- [X] Match that ugly `nm-applet` icon with their neighbors in the systray.
+- [X] ~~Match that ugly `nm-applet` icon with their neighbors in the systray.~~
 
 ## Why You Did That?
 
