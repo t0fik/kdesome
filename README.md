@@ -16,13 +16,17 @@ Before present a little more about this, let's see how it looks like.
 
 ![KDEsome Widgets](https://raw.githubusercontent.com/denydias/kdesome/master/screenshots/3-kdesome-widgets.png)
 
-**KDEsome Dual Head**
-
-![KDEsome Dual Head](https://raw.githubusercontent.com/denydias/kdesome/master/screenshots/4-kdesome-dualhead.png)
-
 **KDEsome Terminal Tile**
 
-![KDEsome Terminal Tile](https://raw.githubusercontent.com/denydias/kdesome/master/screenshots/5-kdesome-termtile.png)
+![KDEsome Terminal Tile](https://raw.githubusercontent.com/denydias/kdesome/master/screenshots/4-kdesome-termtile.png)
+
+**KDEsome Firefox**
+
+![KDEsome Firefox](https://raw.githubusercontent.com/denydias/kdesome/master/screenshots/5-kdesome-firefox.png)
+
+**KDEsome Dual Head**
+
+![KDEsome Dual Head](https://raw.githubusercontent.com/denydias/kdesome/master/screenshots/6-kdesome-dualhead.png)
 
 ## Dependencies
 
