@@ -84,6 +84,15 @@ Also under **Service Manager**, you can also stop and disable **Plasma Networkma
 
 After restart into awesome and you can't see the NetworkManager icon on your system tray, make sure you have the package `network-manager-applet` and its related installed item is enabled in **System Settings > Startup and Shutdown > Autostart**.
 
+If you want to change the `nm-applet` icon to match KDEsome, run in Slackware (adapt for another distro):
+
+```console
+# cp code/mine/kdesome/themes/kdesome/trayicons/*.png \
+/usr/share/icons/hicolor/16x16/apps/
+# rm -f /usr/share/icons/icon-theme.cache && \
+/usr/bin/gtk-update-icon-cache -t -f /usr/share/icons/
+```
+
 Restart you KDE and you should get it done.
 
 ## Features
@@ -104,7 +113,7 @@ Here are some TODOs. These are things I don't know how to get it done in Lua and
 - [ ] Remove Conky from the taglist so that square on tag 6 do not show up for it (there are a [thread](http://www.mail-archive.com/awesome@naquadah.org/msg07817.html) for this in awesome's mail list, but no solution yet).
 - [ ] Adjust windows geometry upon application start (it works fine after a WM restart, but not quite good at application start).
 - [ ] Localize help (maybe using `partials` method from this [repo](https://github.com/noah/awesome/tree/master)).
-- [ ] Match that ugly `nm-applet` icon with their neighbors in the systray.
+- [X] Match that ugly `nm-applet` icon with their neighbors in the systray.
 
 ## Why You Did That?
 
