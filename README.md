@@ -120,7 +120,7 @@ You can even rely on the fantastic KDE Connect to remote control your screen or 
 
 Here are some TODOs. These are things I don't know how to get it done in Lua and awesome APIs and/or do not had the time to fix yet. If you are willing to help, please open an issue or a pull request.
 
-- [X] ~~Set different wallpapers for each tag, on each screen.~~ (INVALID, see footnote 1
+- [X] ~~Set different wallpapers for each tag, on each screen.~~ (INVALID, see footnote 1)
 - [ ] Remove Conky from the taglist so that square on tag 6 do not show up for it. (see footnote 2)
 - [ ] Adjust windows geometry upon application start. (see footnote 3)
 - [ ] Localize help. (see footnote 4)
