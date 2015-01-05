@@ -175,6 +175,7 @@ Code of others are licensed under their own terms.
 1. This one could not be implemented in awesome and was a misconception of mine. The reason is quite obvious when you understand how awesome internals works. From awesome's [wiki](http://awesome.naquadah.org/wiki/Awesome_3_configuration#awesome_object_types):
 
  > **Screen:** There is no real screen object in awesome[...]. A screen is a physical monitor plugged into your computer.
+ >
  > **Tag:** A tag is something like a workspace/desktop but the concept is less rigid. Each client has at least one tag assigned to it. Each screen has at least one tag.
 
  With that concept abstraction, it's safe to say that screens are 'canvas' where tags are 'workspaces' painted to those canvas. As each screen is the only 'canvas' to be filled with things, when you 'switch' from a tag to another, there's no other background. There's just that one background to see things on top of it: wiboxes, clients and so on.
