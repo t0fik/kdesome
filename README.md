@@ -178,11 +178,11 @@ Code of others are licensed under their own terms.
  >
  > **Tag:** A tag is something like a workspace/desktop but the concept is less rigid. Each client has at least one tag assigned to it. Each screen has at least one tag.
 
- With that concept abstraction, it's safe to say that screens are 'canvas' where tags are 'workspaces' painted to those canvas. As each screen is the only 'canvas' to be filled with things, when you 'switch' from a tag to another, there's no other background. There's just that one background to see things on top of it: wiboxes, clients and so on.
+ With that concept abstraction, it's safe to say that screens are 'canvas' where tags are 'workspaces' painted to that 'canvas'. As each screen is the only 'canvas' to be filled with things, when you 'switch' from a tag to another, there's no other background. There's just that one background to see things on top of it: wiboxes, clients and so on.
 
- I made the mistake of thinking about have a 'wallpaper per tag' because I was used to Plasma/KWin, where each physical screen actually have one or more 'virtual screens' abstractions. Virtual screens, as the name implies, are incarnations of physical screens and each one of them have a 'canvas' to be filled, background included. This makes possible to have a wallpaper per virtual screen.
+ I made the mistake of thinking about have 'one wallpaper per tag' because I was used to Plasma/KWin, where each physical screen actually have one or more 'virtual screens' abstractions. Virtual screens, as the name implies, are incarnations of physical screens and each one of them have a 'canvas' to be painted, background included. This makes possible to have one wallpaper per virtual screen.
 
- awesome doesn't work that way, thus this is not possible. The closer you can get for 'one wallpaper per tag' (which is not a precise definition) is to set a new wallpaper as soon as a new tag with a `connect_signal("property::selected")` signal. This is not what I wanted, so I'm just dropping this off.
+ awesome doesn't work that way, thus this is not possible. The closer you can get for 'one wallpaper per tag' (which is not a precise definition) is to set a new wallpaper as soon as you switch to a tag with a `connect_signal("property::selected")` signal. This is not what I want, so I'm just dropping this off.
 
 2. There is a [thread](http://www.mail-archive.com/awesome@naquadah.org/msg07817.html) for this in awesome's mail list and I also asked for help from the guys in `#awesome` IRC. No solution yet.
 
