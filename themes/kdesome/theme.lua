@@ -1,5 +1,5 @@
 --[[
-     KDEsome awesome WM config 1.0
+     KDEsome awesome WM config
      github.com/denydias/kdesome
      based on github.com/copycat-killer/awesome-copycats Powerarrow Darker
 --]]
