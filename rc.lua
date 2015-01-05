@@ -547,11 +547,11 @@ awful.rules.rules = {
                                   width = 300,
                                   height = 748 } } },
 
-    -- Set geometry for secondary clients (chats)
+    -- Set geometry and prevent focus steal for secondary clients (chats)
     { rule = { class = "Kopete",
                role = "MainWindow#2" },
-      properties = { switchtotag = true,
-                     focus = true,
+      properties = { switchtotag = false,
+                     focus = false,
                      geometry = { x = 302,
                                   y = 384,
                                   width = 660,
