@@ -138,7 +138,7 @@ You can even rely on the fantastic KDE Connect to remote control your screen or 
 
 ## TODO
 
-There are things I don't know how to get done with Lua and awesome API yet, or do not had the time to fix. If you are willing to help, please see the [issues](/denydias/kdesome/issues) page.
+There are things I don't know how to get done with Lua and awesome API yet, or do not had the time to fix. If you are willing to help, please see the [issues](https://github.com/denydias/kdesome/issues) page.
 
 ## Why You Did That?
 
