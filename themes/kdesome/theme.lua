@@ -8,7 +8,6 @@ theme                               = {}
 
 themes_dir                          = os.getenv("HOME") .. "/.config/awesome/themes/kdesome"
 theme.wallpaper                     = themes_dir .. "/wall.png"
-theme.help_icon                     = themes_dir .. "/icons/help.png"
 
 theme.font                          = "Terminus 8"
 theme.fg_normal                     = "#DDDDFF"
@@ -26,16 +25,15 @@ theme.tasklist_fg_normal            = "#DDDDFF"
 theme.tasklist_fg_focus             = "#508ED8"
 theme.tasklist_bg_normal            = "#1A1A1A"
 theme.tasklist_bg_focus             = "#313131"
-theme.textbox_widget_margin_top     = 1
 theme.notify_fg                     = theme.fg_normal
 theme.notify_bg                     = theme.bg_normal
 theme.notify_border                 = theme.border_focus
 theme.awful_widget_height           = 14
 theme.awful_widget_margin_top       = 2
-theme.mouse_finder_color            = "#CC9393"
 theme.menu_height                   = "16"
 theme.menu_width                    = "140"
 
+theme.help_icon                     = themes_dir .. "/icons/help.png"
 theme.submenu_icon                  = themes_dir .. "/icons/submenu.png"
 theme.taglist_squares_sel           = themes_dir .. "/icons/square_sel.png"
 theme.taglist_squares_unsel         = themes_dir .. "/icons/square_unsel.png"
@@ -63,19 +61,6 @@ theme.widget_ac                     = themes_dir .. "/icons/ac.png"
 theme.widget_battery                = themes_dir .. "/alticons/battery.png"
 theme.widget_battery_low            = themes_dir .. "/alticons/battery_low.png"
 theme.widget_battery_empty          = themes_dir .. "/alticons/battery_empty.png"
-theme.widget_mem                    = themes_dir .. "/icons/mem.png"
-theme.widget_cpu                    = themes_dir .. "/icons/cpu.png"
-theme.widget_temp                   = themes_dir .. "/icons/temp.png"
-theme.widget_net                    = themes_dir .. "/icons/net.png"
-theme.widget_hdd                    = themes_dir .. "/icons/hdd.png"
-theme.widget_music                  = themes_dir .. "/icons/note.png"
-theme.widget_music_on               = themes_dir .. "/icons/note_on.png"
-theme.widget_vol                    = themes_dir .. "/icons/vol.png"
-theme.widget_vol_low                = themes_dir .. "/icons/vol_low.png"
-theme.widget_vol_no                 = themes_dir .. "/icons/vol_no.png"
-theme.widget_vol_mute               = themes_dir .. "/icons/vol_mute.png"
-theme.widget_mail                   = themes_dir .. "/icons/mail.png"
-theme.widget_mail_on                = themes_dir .. "/icons/mail_on.png"
 
 theme.tasklist_disable_icon         = true
 theme.tasklist_floating             = ""
