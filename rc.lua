@@ -223,8 +223,7 @@ mytaglist.buttons = awful.util.table.join(
                     awful.button({ }, 3, awful.tag.viewtoggle),
                     awful.button({ modkey }, 3, awful.client.toggletag),
                     awful.button({ }, 4, function(t) awful.tag.viewnext(awful.tag.getscreen(t)) end),
-                    awful.button({ }, 5, function(t) awful.tag.viewprev(awful.tag.getscreen(t)) end)
-                    )
+                    awful.button({ }, 5, function(t) awful.tag.viewprev(awful.tag.getscreen(t)) end))
 mytasklist = {}
 mytasklist.buttons = awful.util.table.join(
                      awful.button({ }, 1, function (c)
@@ -350,7 +349,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, ",", function () awful.util.spawn(kdeconf) end, "Abre configurações do KDE*"),
     awful.key({ modkey, "Control" }, ",", function () awful.util.spawn(aweconf) end, "Abre configurações do awesome*"),
     awful.key({ altkey }, "c", function () lain.widgets.calendar:show(7) end, "Mostra calendário*"),
-    awful.key({ altkey }, "h", function () fswidget.show(7) end, "Mostra uso do disco"),
+    awful.key({ altkey }, "h", function () fswidget.show(7) end, "Mostra uso do disco*"),
     awful.key({ modkey, "Control", "Shift" }, "w", function () awful.util.spawn_with_shell(menugen) end, "Gera menu de aplicativos*"),
     awful.key({ modkey, "Control" }, "r", awesome.restart, "Reinicia awesome"),
 
@@ -467,8 +466,9 @@ clientkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end, "Coloca no mestre (modo encaixe)"),
     awful.key({ modkey }, "i",
         function (c)
-            local result = "<b>Informações da Janela do Aplicativo: " .. c.class .. "</b>\n"
+            local result = ""
             result = result .. "<b>Nome:</b> " .. c.name .. "\n"
+            result = result .. "<b>Classe:</b> " .. c.class .. "\n"
             result = result .. "<b>Instância:</b> " .. c.instance .. "\n"
             if c.role then
                 result = result .. "<b>Papel:</b> " .. c.role .. "\n"
@@ -484,7 +484,8 @@ clientkeys = awful.util.table.join(
             else
                 appicon = icons .. "/kAwOkenWhite/clear/22x22/actions/info2.png"
             end
-            naughty.notify({
+              naughty.notify({
+                title = "Informações da Janela do Aplicativo",
                 text = result,
                 icon = appicon,
             })
@@ -508,6 +509,13 @@ awful.rules.rules = {
                      maximized_horizontal = false,
                      buttons = clientbuttons,
                      size_hints_honor = false } },
+
+    -- Match all new clients, notify name and class (for debug purposes only)
+    --{ rule = { },
+    --  properties = { },
+    --  callback = function(c)
+    --                 naughty.notify({title="New Client Debug", text="Name: ".. c.name.."\nClass: ".. c.class})
+    --             end },
 
     -- {{ Application rules
     -- Firefox: all clients in screen 1, tag 1
@@ -539,7 +547,7 @@ awful.rules.rules = {
     { rule = { class = "Kopete" },
       properties = { tag = tags[1][3] } },
 
-    -- Set geometry for main client
+    -- Set geometry for main client (contact list)
     { rule = { class = "Kopete",
                role = "MainWindow#1" },
       properties = { geometry = { x = 0,
@@ -547,7 +555,7 @@ awful.rules.rules = {
                                   width = 300,
                                   height = 748 } } },
 
-    -- Set geometry and prevent focus steal for secondary clients (chats)
+    -- Set geometry and prevent focus steal for secondary client (chat window)
     { rule = { class = "Kopete",
                role = "MainWindow#2" },
       properties = { switchtotag = false,
@@ -640,11 +648,6 @@ client.connect_signal("manage", function (c, startup)
     end
 end)
 
--- Apply rules after an application startup finishes
-client.connect_signal("spawn::completed", function (c)
-  awful.rules.apply(c)
-end)
-
 -- Manage features when a client get the focus
 client.connect_signal("focus",
     function(c)
@@ -662,8 +665,6 @@ client.connect_signal("focus",
             c.border_width = 0
         else
             c.border_color = beautiful.border_focus
-            -- Also raise the client when it get the focus
-            client.focus = c
         end
     end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
