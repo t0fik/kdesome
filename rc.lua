@@ -84,8 +84,8 @@ kdeconf     = "systemsettings"
 aweconf     = "kate --new --name aweconf " .. home .. "/.conkyrc " ..
               config_dir .. "/compton.conf " .. theme_dir .. "/theme.lua "
               .. config_dir .. "/rc.lua"
-menutheme   = "sed 's/xdgmenu = {    /xdgmenu = { theme = { height = 16, width = 300 },\\n    /'"
-menugen     = "xdg_menu --format awesome --root-menu /etc/xdg/menus/applications.menu | " .. menutheme .. " > " .. config_dir .. "/xdg_menu.lua"
+menutheme   = "sed 's/xdgmenu = {/xdgmenu = { theme = { height = 16, width = 300 },/'"
+menugen     = "xdg_menu --format awesome | " .. menutheme .. " > " .. config_dir .. "/xdg_menu.lua"
 -- }}}
 
 -- {{{ Layouts and Tags

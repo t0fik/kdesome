@@ -1,9 +1,11 @@
- menuce82ef9e96797c41655cb0aed50b727d = {     {"KMag", "kmag -caption KMag ", "/usr/share/icons/hicolor/16x16/apps/kmag.png" },
+ local menuce82ef9e96797c41655cb0aed50b727d = {
+     {"KMag", "kmag -caption KMag ", "/usr/share/icons/hicolor/16x16/apps/kmag.png" },
      {"KMouseTool", "kmousetool -caption KMouseTool ", "/usr/share/icons/hicolor/16x16/apps/kmousetool.png" },
      {"KMouth", "kmouth -caption KMouth ", "/usr/share/icons/hicolor/16x16/apps/kmouth.png" },
  }
 
- menu27f1ed0563426e266c58e655028c8284 = {     {"Akonaditray", "akonaditray", "/usr/share/icons/hicolor/22x22/apps/akonaditray.png" },
+ local menu27f1ed0563426e266c58e655028c8284 = {
+     {"Akonaditray", "akonaditray", "/usr/share/icons/hicolor/22x22/apps/akonaditray.png" },
      {"Ark", "ark -caption Ark ", "/usr/share/icons/hicolor/16x16/apps/ark.png" },
      {"Assistente de importação do KMail", "importwizard", "/usr/share/icons/hicolor/64x64/apps/kontact-import-wizard.png" },
      {"Filelight", "filelight ", "/usr/share/icons/hicolor/16x16/apps/filelight.png" },
@@ -34,7 +36,8 @@
      {"luckyBackup", "/usr/bin/luckybackup", "///usr/share/pixmaps/luckybackup.png" },
  }
 
- menu5392ed125d387e4ac53b496ec76d3280 = {     {"Artikulate", "artikulate -caption Artikulate ", "/usr/share/icons/hicolor/16x16/apps/artikulate.png" },
+ local menu5392ed125d387e4ac53b496ec76d3280 = {
+     {"Artikulate", "artikulate -caption Artikulate ", "/usr/share/icons/hicolor/16x16/apps/artikulate.png" },
      {"Blinken", "blinken", "/usr/share/icons/hicolor/16x16/apps/blinken.png" },
      {"Cantor", "cantor  -caption Cantor", "/usr/share/icons/hicolor/16x16/apps/cantor.png" },
      {"Editor de temas do Pairs", "pairseditor  -caption Pairs Theme Editor", "/usr/share/icons/hicolor/16x16/apps/pairseditor.png" },
@@ -64,7 +67,8 @@
      {"Step", "step -caption Step ", "/usr/share/icons/hicolor/16x16/apps/step.png" },
  }
 
- menu1e8e168b1235cc357ae3f38452476237 = {     {"Bitcoin Core", "/usr/bin/bitcoin-qt ", "/usr/share/pixmaps/bitcoin.png" },
+ local menu1e8e168b1235cc357ae3f38452476237 = {
+     {"Bitcoin Core", "/usr/bin/bitcoin-qt ", "/usr/share/pixmaps/bitcoin.png" },
      {"Bitcoin Core", "/usr/bin/bitcoin-qt -datadir=/media/nas/home/.bitcoin ", "/usr/share/pixmaps/bitcoin.png" },
      {"Braindump", "braindump ", "/usr/share/icons/hicolor/16x16/apps/braindump.png" },
      {"Calendário", "korganizer-mobile", "/usr/share/icons/hicolor/48x48/apps/korganizer-mobile.png" },
@@ -105,7 +109,8 @@
      {"calibre", "calibre --detach ", "/usr/share/icons/hicolor/16x16/apps/calibre-gui.png" },
  }
 
- menuaee21f5228fb7931758d996659241ec4 = {     {"BleachBit", "bleachbit", "/usr/share/pixmaps/bleachbit.png" },
+ local menuaee21f5228fb7931758d996659241ec4 = {
+     {"BleachBit", "bleachbit", "/usr/share/pixmaps/bleachbit.png" },
      {"Cópia de segurança do Nepomuk", "nepomukbackup"},
      {"Dolphin", "dolphin  -caption Dolphin ", "/usr/share/icons/gnome/16x16/apps/system-file-manager.png" },
      {"Editor do dconf", "dconf-editor", "/usr/share/icons/hicolor/16x16/apps/dconf-editor.png" },
@@ -134,7 +139,8 @@
      {"luckyBackup (super usuário)", "su-to-root -X -c /usr/bin/luckybackup", "///usr/share/pixmaps/luckybackup.png" },
  }
 
- menue2fa0f6ba17f6bf3d1bf1dbed5a1c5b2 = {     {"E-book Viewer", "ebook-viewer --detach ", "/usr/share/icons/hicolor/16x16/apps/calibre-viewer.png" },
+ local menue2fa0f6ba17f6bf3d1bf1dbed5a1c5b2 = {
+     {"E-book Viewer", "ebook-viewer --detach ", "/usr/share/icons/hicolor/16x16/apps/calibre-viewer.png" },
      {"Geeqie", "geeqie -r ", "/usr/share/pixmaps/geeqie.png" },
      {"Gwenview", "gwenview  -caption Gwenview ", "/usr/share/icons/hicolor/16x16/apps/gwenview.png" },
      {"KColorChooser", "kcolorchooser", "/usr/share/icons/hicolor/16x16/apps/kcolorchooser.png" },
@@ -154,7 +160,8 @@
      {"XSane - Scanning", "xsane", "/usr/share/pixmaps/xsane.xpm" },
  }
 
- menuc8205c7636e728d448c2774e6a4a944b = {     {"Akregator", "akregator   -caption Akregator", "/usr/share/icons/hicolor/16x16/apps/akregator.png" },
+ local menuc8205c7636e728d448c2774e6a4a944b = {
+     {"Akregator", "akregator   -caption Akregator", "/usr/share/icons/hicolor/16x16/apps/akregator.png" },
      {"Armory", "python /usr/lib64/python2.7/site-packages/armory/ArmoryQt.py", "/usr/share/pixmaps/armoryicon.png" },
      {"Armory (Offline-mode)", "python /usr/lib64/python2.7/site-packages/armory/ArmoryQt.py --offline", "/usr/share/pixmaps/armoryicon.png" },
      {"Armory (Testnet)", "python /usr/lib64/python2.7/site-packages/armory/ArmoryQt.py --testnet", "/usr/share/pixmaps/armorytestneticon.png" },
@@ -203,7 +210,8 @@
      {"wpa_gui", "kdesu wpa_gui", "/usr/share/pixmaps/wpa_gui.png" },
  }
 
- menu9934b410ae21278836151c0ae306665b = {     {"AMOR", "amor", "/usr/share/icons/hicolor/16x16/apps/amor.png" },
+ local menu9934b410ae21278836151c0ae306665b = {
+     {"AMOR", "amor", "/usr/share/icons/hicolor/16x16/apps/amor.png" },
      {"Batalha Naval", "knavalbattle -caption Naval Battle ", "/usr/share/icons/hicolor/16x16/apps/knavalbattle.png" },
      {"Blinken", "blinken", "/usr/share/icons/hicolor/16x16/apps/blinken.png" },
      {"Bomber", "bomber -caption Bomber", "/usr/share/icons/hicolor/32x32/apps/bomber.png" },
@@ -259,7 +267,8 @@
      {"picmi", "picmi", "/usr/share/icons/hicolor/16x16/apps/picmi.png" },
  }
 
- menud35651cdbe370767cefd2e5d398a1dd5 = {     {"Anjuta", "anjuta ", "/usr/share/icons/hicolor/16x16/apps/anjuta.png" },
+ local menud35651cdbe370767cefd2e5d398a1dd5 = {
+     {"Anjuta", "anjuta ", "/usr/share/icons/hicolor/16x16/apps/anjuta.png" },
      {"CMake", "cmake-gui ", "/usr/share/pixmaps/CMakeSetup32.png" },
      {"Cervisia", "cervisia -caption Cervisia  ", "/usr/share/icons/hicolor/16x16/apps/cervisia.png" },
      {"Console do Akonadi", "akonadiconsole", "/usr/share/icons/hicolor/16x16/apps/akonadiconsole.png" },
@@ -299,7 +308,8 @@
      {"distcc monitor", "distccmon-gnome"},
  }
 
- menub199120cd099b92c24c1b9fb15970f52 = {     {"AMZ Downloader", "amzdownloader --amz "},
+ local menub199120cd099b92c24c1b9fb15970f52 = {
+     {"AMZ Downloader", "amzdownloader --amz "},
      {"Amarok", "amarok ", "/usr/share/icons/hicolor/16x16/apps/amarok.png" },
      {"Audacious", "audacious ", "/usr/share/icons/hicolor/48x48/apps/audacious.png" },
      {"Dragon Player", "dragon ", "/usr/share/icons/hicolor/16x16/apps/dragonplayer.png" },
