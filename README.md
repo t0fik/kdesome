@@ -46,7 +46,7 @@ To use KDEsome, first make sure that you have meet all dependencies. They are:
  # sbopkg -i "lua lgi libxdg-basedir"
  # export AWESOME_VER="3.5.5-x86_64-1_deny"
  # wget -O awesome-$AWESOME_VER.tgz \
-   https://github.com/denydias/slackbuilds/blob/master/pkg64/awesome-$AWESOME_VER.tgz?raw=true
+    https://github.com/denydias/slackbuilds/blob/master/pkg64/awesome-$AWESOME_VER.tgz?raw=true
  # installpkg awesome-$AWESOME_VER.tgz
  ```
 
@@ -70,10 +70,10 @@ To use KDEsome, first make sure that you have meet all dependencies. They are:
  ```console
  # export XDGMENU_VER="0.7.6.2-noarch-1_deny"
  # wget -O xdgmenu-$XDGMENU_VER.tgz \
-   https://github.com/denydias/slackbuilds/blob/master/pkg64/xdgmenu-$XDGMENU_VER.tgz?raw=true
+    https://github.com/denydias/slackbuilds/blob/master/pkg64/xdgmenu-$XDGMENU_VER.tgz?raw=true
  # installpkg xdgmenu-$XDGMENU_VER.tgz
  ```
- Same as above. replace the value `0.7.6.2-noarch-1_deny` in `XDGMENU_VER` variable with the actual xdgmenu package version available in my [repository](https://github.com/denydias/slackbuilds/tree/master/pkg64).
+ Same as above, replace the value `0.7.6.2-noarch-1_deny` in `XDGMENU_VER` variable with the actual xdgmenu package version available in my [repository](https://github.com/denydias/slackbuilds/tree/master/pkg64).
 
  In the lack of confidence, just use my [SlackBuild](https://github.com/denydias/slackbuilds/tree/master/xdgmenu) to get it from source.
 
