@@ -118,13 +118,7 @@ You can even rely on the fantastic KDE Connect to remote control your screen or 
 
 ## TODO
 
-Here are some TODOs. These are things I don't know how to get it done in Lua and awesome APIs and/or do not had the time to fix yet. If you are willing to help, please open an issue or a pull request.
-
-- [X] ~~Set different wallpapers for each tag, on each screen.~~ (INVALID, see footnote 1)
-- [ ] Remove Conky from the taglist so that square on tag 6 do not show up for it. (see footnote 2)
-- [ ] Adjust windows geometry upon application start. (see footnote 3)
-- [ ] Localize help. (see footnote 4)
-- [X] ~~Match that ugly `nm-applet` icon with their systray neighbors.~~ (FIXED, see footnote 5)
+There are things I don't know how to get done in Lua/awesome APIs yet or do not had the time to fix. If you are willing to help, please see the [issues](/denydias/kdesome/issues) page.
 
 ## Why You Did That?
 
@@ -169,25 +163,3 @@ I would like to thanks these folks:
 My code for KDEsome is licensed under [GNU GENERAL PUBLIC LICENSE Version 3](http://www.gnu.org/licenses/gpl-3.0.txt).
 
 Code of others are licensed under their own terms.
-
-#### Footnotes
-
-1. This one could not be implemented in awesome and was a misconception of mine. The reason is quite obvious when you understand how awesome internals works. From awesome's [wiki](http://awesome.naquadah.org/wiki/Awesome_3_configuration#awesome_object_types):
-
- > **Screen:** There is no real screen object in awesome[...]. A screen is a physical monitor plugged into your computer.
- >
- > **Tag:** A tag is something like a workspace/desktop but the concept is less rigid. Each client has at least one tag assigned to it. Each screen has at least one tag.
-
- With that concept abstraction, it's safe to say that screens are 'canvas' where tags are 'workspaces' painted to that 'canvas'. As each screen is the only 'canvas' to be filled with things, when you 'switch' from a tag to another, there's no other background. There's just that one background to see things on top of it: wiboxes, clients and so on.
-
- I made the mistake of thinking about have 'one wallpaper per tag' because I was used to Plasma/KWin, where each physical screen actually have one or more 'virtual screens' abstractions. Virtual screens, as the name implies, are incarnations of physical screens and each one of them have a 'canvas' to be painted, background included. This makes possible to have one wallpaper per virtual screen.
-
- awesome doesn't work that way, thus this is not possible. The closer you can get for 'one wallpaper per tag' (which is not a precise definition) is to set a new wallpaper as soon as you switch to a tag with a `connect_signal("property::selected")` signal. This is not what I want, so I'm just dropping this off.
-
-2. There is a [thread](http://www.mail-archive.com/awesome@naquadah.org/msg07817.html) for this in awesome's mail list and I also asked for help from the guys in `#awesome` IRC. No solution yet.
-
-3. It works fine after an awesome WM restart (Mod4+r), but not quite good at application first start.
-
-4. Maybe using `partials` method from this [repo](https://github.com/noah/awesome/tree/master).
-
-5. See new icons [here](/denydias/kdesome/tree/master/themes/kdesome/trayicons). As a bonus, there are also icons for Synology CloudStation.
