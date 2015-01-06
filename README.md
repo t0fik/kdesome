@@ -40,7 +40,7 @@ To use KDEsome, first make sure that you have meet all dependencies. They are:
  # sbopkg -i "lua lgi libxdg-basedir awesome"
  ```
 
- Or you can use my own awesome package that might be newer than one from the one available at [slackbuilds.org](http://slackbuilds.org/repository/14.1/desktop/awesome/?search=awesome):
+ Or you can use my own awesome package that might be newer than the one available at [slackbuilds.org](http://slackbuilds.org/repository/14.1/desktop/awesome/?search=awesome):
 
  ```console
  # sbopkg -i "lua lgi libxdg-basedir"
