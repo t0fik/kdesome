@@ -467,17 +467,17 @@ clientkeys = awful.util.table.join(
     awful.key({ modkey }, "i",
         function (c)
             local result = ""
-            result = result .. "<b>Nome:</b> " .. c.name .. "\n"
-            result = result .. "<b>Classe:</b> " .. c.class .. "\n"
-            result = result .. "<b>Instância:</b> " .. c.instance .. "\n"
+            result = result .. "<b>     Nome :</b> " .. c.name .. "\n"
+            result = result .. "<b>   Classe :</b> " .. c.class .. "\n"
+            result = result .. "<b>Instância :</b> " .. c.instance .. "\n"
             if c.role then
-                result = result .. "<b>Papel:</b> " .. c.role .. "\n"
+                result = result .. "<b>    Papel :</b> " .. c.role .. "\n"
             else
-                result = result .. "<b>Papel:</b> Não definido\n"
+                result = result .. "<b>    Papel :</b> Não definido\n"
             end
-            result = result .. "<b>Tipo:</b> " .. c.type .. "\n"
-            result = result .. "<b>PID:</b> " .. c.pid .. "\n"
-            result = result .. "<b>XID:</b> " .. c.window
+            result = result .. "<b>     Tipo :</b> " .. c.type .. "\n"
+            result = result .. "<b>      PID :</b> " .. c.pid .. "\n"
+            result = result .. "<b>      XID :</b> " .. c.window
             local appicon = ""
             if c.icon then
                 appicon = c.icon
@@ -487,6 +487,7 @@ clientkeys = awful.util.table.join(
               naughty.notify({
                 title = "Informações da Janela do Aplicativo",
                 text = result,
+                font = "Terminus 10",
                 icon = appicon,
             })
         end, "Informações da janela do aplicativo*")
