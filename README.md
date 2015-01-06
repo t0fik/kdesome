@@ -40,6 +40,20 @@ To use KDEsome, first make sure that you have meet all dependencies. They are:
  # sbopkg -i "lua lgi libxdg-basedir awesome"
  ```
 
+ Or you can use my own awesome package that might be newer than one from the one available at [slackbuilds.org](http://slackbuilds.org/repository/14.1/desktop/awesome/?search=awesome):
+
+ ```console
+ # sbopkg -i "lua lgi libxdg-basedir"
+ # export AWESOME_VER="3.5.5-x86_64-1_deny"
+ # wget -O awesome-$AWESOME_VER.tgz \
+   https://github.com/denydias/slackbuilds/blob/master/pkg64/awesome-$AWESOME_VER.tgz?raw=true
+ # installpkg awesome-$AWESOME_VER.tgz
+ ```
+
+ In the command above, replace the value `3.5.5-x86_64-1_deny` in `AWESOME_VER` variable with the actual awesome package version available in my [repository](https://github.com/denydias/slackbuilds/tree/master/pkg64).
+
+ If you do not trust my binary packages (and you are 100% right on doing it), just use my [SlackBuild](https://github.com/denydias/slackbuilds/tree/master/awesome) to compile it from source.
+
 2. **[Unclutter](http://unclutter.sourceforge.net/):** a program which runs permanently in the background of an X11 session to hide the mouse cursor when it's not in use (and bring it back when you need it too). Same as above, most distributions have packages for it.
 
  Slackware users should run this to get Unclutter in place:
@@ -51,11 +65,17 @@ To use KDEsome, first make sure that you have meet all dependencies. They are:
 
 3. **[XDG-Menu](https://www.archlinux.org/packages/community/any/archlinux-xdg-menu/):** automatic generation for WM menu from xdg files. This is an Arch Linux app. I don't know if it's available to other distros out there.
 
- Slackware users can install it by following this LQ's [directions](http://www.linuxquestions.org/questions/slackware-14/slackware-xdg-menus-925629/). Just download the provided package and install it with:
+ I have Slackware packages for this one too:
 
-  ```console
-  # installpkg slackware-xdg-menu-0.7.5.4-1-any-2.txz
-  ```
+ ```console
+ # export XDGMENU_VER="0.7.6.2-noarch-1_deny"
+ # wget -O xdgmenu-$XDGMENU_VER.tgz \
+   https://github.com/denydias/slackbuilds/blob/master/pkg64/xdgmenu-$XDGMENU_VER.tgz?raw=true
+ # installpkg xdgmenu-$XDGMENU_VER.tgz
+ ```
+ Same as above. replace the value `0.7.6.2-noarch-1_deny` in `XDGMENU_VER` variable with the actual xdgmenu package version available in my [repository](https://github.com/denydias/slackbuilds/tree/master/pkg64).
+
+ In the lack of confidence, just use my [SlackBuild](https://github.com/denydias/slackbuilds/tree/master/xdgmenu) to get it from source.
 
 4. **[Compton](https://github.com/chjj/compton):** A compositor for X11. Compton should be available for many distros too.
 
