@@ -51,7 +51,7 @@ function run_once(cmd)
 end
 
 -- Compositor
-run_once("compton -b --config " .. os.getenv("HOME") .. "/.config/awesome/compton.conf")
+run_once("compton -b --detect-rounded-corners --config " .. os.getenv("HOME") .. "/.config/awesome/compton.conf")
 
 -- uncluter
 run_once("unclutter")
