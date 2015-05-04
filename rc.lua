@@ -14,6 +14,7 @@ local beautiful = require("beautiful")
 local naughty   = require("naughty")
 local lain      = require("lain")
 local keydoc    = require("keydoc")
+local alttab    = require("alttab")
 -- }}}
 
 -- {{{ Error handling
@@ -108,6 +109,14 @@ tags = {
 for s = 1, screen.count() do
    tags[s] = awful.tag(tags.names, s, tags.layout)
 end
+
+-- awesome_alttab
+alttab.settings.preview_box = true
+alttab.settings.preview_box_bg = "#1F1F1FAA"
+alttab.settings.preview_box_border = "#1F1F1F00"
+alttab.settings.preview_box_fps = 30
+alttab.settings.preview_box_delay = 100
+alttab.settings.client_opacity = false
 -- }}}
 
 -- {{{ Random Wallpapers
@@ -374,6 +383,18 @@ globalkeys = awful.util.table.join(
         end, "Alterna para janela focada anteriormente"),
     awful.key({ modkey }, "u", awful.client.urgent.jumpto, "Foca próxima janela urgente"),
     awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end, "Foca próxima tela"),
+
+    -- awesome_alttab
+    -- Forward
+    awful.key({ altkey,         }, "Tab",
+        function ()
+            alttab.switch(1, "Alt_L", "Tab", "ISO_Left_Tab")
+        end, "Alterna janelas* (shift para inverter)"),
+    -- Reverse
+    awful.key({ altkey, "Shift"   }, "Tab",
+        function ()
+            alttab.switch(-1, "Alt_L", "Tab", "ISO_Left_Tab")
+        end),
 
     -- Layout management (tile mode)
     keydoc.group("Layout (modo encaixe)"),

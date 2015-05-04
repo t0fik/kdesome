@@ -1,3 +1,6 @@
 [submodule "lain"]
 	path = lain
 	url = git@github.com:copycat-killer/lain.git
+[submodule "alttab"]
+	path = alttab
+	url = https://github.com/jorenheit/awesome_alttab.git
