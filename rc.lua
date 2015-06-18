@@ -478,6 +478,13 @@ clientkeys = awful.util.table.join(
             c.maximized_horizontal = not c.maximized_horizontal
             c.maximized_vertical   = not c.maximized_vertical
         end, "Maximiza"),
+   awful.key({ modkey }, "c",
+        function (c)
+            c:geometry({ x = 30,
+                         y = 48,
+                         width = 1304,
+                         height = 688 })
+        end, "Centraliza* (modo flutuante)"),
     awful.key({ modkey }, "f", function (c) c.fullscreen = not c.fullscreen end, "Alterna para tela cheia"),
     awful.key({ modkey }, "o", awful.client.movetoscreen, "Move para outra tela"),
     awful.key({ modkey }, "s", function (c) c.sticky = not c.sticky end, "Coloca em todas as tags*"),
@@ -498,7 +505,8 @@ clientkeys = awful.util.table.join(
             end
             result = result .. "<b>     Tipo :</b> " .. c.type .. "\n"
             result = result .. "<b>      PID :</b> " .. c.pid .. "\n"
-            result = result .. "<b>      XID :</b> " .. c.window
+            result = result .. "<b>      XID :</b> " .. c.window .. "\n"
+            result = result .. "<b>Geometria :</b> " .. c:geometry().x .. "," .. c:geometry().y .. "," .. c:geometry().width .. "," .. c:geometry().height
             local appicon = ""
             if c.icon then
                 appicon = c.icon
